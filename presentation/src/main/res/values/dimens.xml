@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_Medium">8dp</dimen>
+    <dimen name="image_view_corner_radius">10%</dimen>
+    <dimen name="margin_large">32dp</dimen>
 </resources>

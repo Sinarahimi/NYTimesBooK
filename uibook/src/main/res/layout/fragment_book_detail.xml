@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".bookdetail.BookDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/coverShapeableImageView"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="@dimen/margin_Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        tools:background="@color/design_default_color_primary" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/titleAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_Medium"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/title_author"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coverShapeableImageView" />
+
+    <TextView
+        android:id="@+id/authorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_Medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintBottom_toBottomOf="@+id/titleAuthorTextView"
+        app:layout_constraintStart_toEndOf="@+id/titleAuthorTextView"
+        app:layout_constraintTop_toTopOf="@+id/titleAuthorTextView"
+        tools:text="Charles Soule" />
+
+    <TextView
+        android:id="@+id/titlePublisherTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/title_publisher"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="@+id/titleAuthorTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titleAuthorTextView" />
+
+    <TextView
+        android:id="@+id/publisherTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_Medium"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintBottom_toBottomOf="@+id/titlePublisherTextView"
+        app:layout_constraintStart_toEndOf="@+id/titlePublisherTextView"
+        app:layout_constraintTop_toTopOf="@+id/titlePublisherTextView"
+        tools:text="Del Rey" />
+
+    <TextView
+        android:id="@+id/titleDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/title_description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="@+id/titlePublisherTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titlePublisherTextView" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="5"
+        app:layout_constraintBottom_toBottomOf="@+id/titleDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/titleDescriptionTextView"
+        app:layout_constraintTop_toTopOf="@+id/titleDescriptionTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/titleBuyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_Medium"
+        android:text="@string/title_buy"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/amazonButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        app:iconTint="@null"
+        app:icon="@drawable/ic_apple_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBuyTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/appleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        app:icon="@drawable/ic_apple_logo"
+        app:iconTint="@color/design_default_color_primary"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBuyTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

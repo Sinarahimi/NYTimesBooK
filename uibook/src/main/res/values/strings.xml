@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_author">Author :</string>
+    <string name="title_publisher">Publisher :</string>
+    <string name="title_description">Description :</string>
+    <string name="title_buy">Buy</string>
+</resources>
