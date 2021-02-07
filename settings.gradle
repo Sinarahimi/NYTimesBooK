@@ -1,0 +1,4 @@
+include ':uibook'
+include ':presentation'
+include ':app'
+rootProject.name = "NYTimesBook"
