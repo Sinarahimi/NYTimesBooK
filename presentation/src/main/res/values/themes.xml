@@ -18,4 +18,11 @@
     <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
         <item name="cornerSize">@dimen/image_view_corner_radius</item>
     </style>
+
+    <style name="StyleOutLineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor" >colorOnSecondary</item>
+        <item name="iconTint">null</item>
+        <item name="iconSize">30dp</item>
+    </style>
+
 </resources>

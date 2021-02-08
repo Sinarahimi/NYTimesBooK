@@ -1,3 +1,4 @@
+include ':network'
 include ':uibook'
 include ':presentation'
 include ':app'

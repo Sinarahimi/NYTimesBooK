@@ -4,4 +4,6 @@
     <string name="title_publisher">Publisher :</string>
     <string name="title_description">Description :</string>
     <string name="title_buy">Buy</string>
+    <string name="button_amazon_book">‌Buy On Amazon Book</string>
+    <string name="button_apple_book">Buy On Apple Book</string>
 </resources>
