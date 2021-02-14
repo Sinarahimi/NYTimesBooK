@@ -9,9 +9,9 @@ import com.squareup.moshi.JsonClass
 sealed class Dto {
 
     @JsonClass(generateAdapter = true)
-    data class Library(
+    data class BaseNetworkResponse<T>(
         @Json(name = "status") val status: String,
-        @Json(name = "results") val books: List<Book>
+        @Json(name = "results") val results: T
 
     ) : Dto()
 
@@ -23,11 +23,11 @@ sealed class Dto {
         @Json(name = "title") val title: String,
         @Json(name = "book_image") val bookImage: String,
         @Json(name = "buy_links") val buyLinks: List<Buy>
-    )
+    ) : Dto()
 
     @JsonClass(generateAdapter = true)
     data class Buy(
         @Json(name = "name") val name: String,
         @Json(name = "url") val url: String
-    )
+    ) : Dto()
 }

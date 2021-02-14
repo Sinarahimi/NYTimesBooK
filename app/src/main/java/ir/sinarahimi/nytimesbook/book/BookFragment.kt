@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ir.sinarahimi.nytimesbook.BuildConfig
 import ir.sinarahimi.nytimesbook.R
 
 // TODO: Rename parameter arguments, choose names that match

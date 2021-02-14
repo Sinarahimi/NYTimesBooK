@@ -96,24 +96,24 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/amazonButton"
+        style="@style/StyleOutLineButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/StyleOutLineButton"
-        app:icon="@drawable/ic_amazon"
-        android:text="@string/button_amazon_book"
         android:layout_marginTop="@dimen/margin_Medium"
+        android:text="@string/button_amazon_book"
+        app:icon="@drawable/ic_amazon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBuyTextView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/appleButton"
+        style="@style/StyleOutLineButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/StyleOutLineButton"
-        app:icon="@drawable/ic_apple_logo"
-        android:text="@string/button_apple_book"
         android:layout_marginTop="@dimen/margin_Medium"
+        android:text="@string/button_apple_book"
+        app:icon="@drawable/ic_apple_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
