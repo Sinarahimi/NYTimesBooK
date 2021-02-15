@@ -1,3 +1,4 @@
+include ':persistence'
 include ':domain'
 include ':data'
 include ':network'

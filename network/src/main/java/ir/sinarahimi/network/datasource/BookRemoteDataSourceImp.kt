@@ -1,6 +1,5 @@
 package ir.sinarahimi.network.datasource
 
-
 import ir.sinarahimi.data.datasource.book.BookRemoteDataSource
 import ir.sinarahimi.domain.ModelNYTimes
 import ir.sinarahimi.domain.NetworkResponse
@@ -19,10 +18,8 @@ class BookRemoteDataSourceImp(private val bookApi: BookApi) : BookRemoteDataSour
 
     //TODO Ask this
     override suspend fun get(): NetworkResponse<List<ModelNYTimes.Book>> = execute {
-
         bookApi.getBooks(apiKey)
     }.map {
-
         it.results.map { book ->
 
             book.dtoToModel()

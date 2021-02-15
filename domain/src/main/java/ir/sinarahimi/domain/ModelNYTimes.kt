@@ -8,10 +8,10 @@ sealed class ModelNYTimes {
         val author: String,
         val title: String,
         val bookImage: String,
-        val buyLinks: List<Buy>
+        val buyLinks: List<BuyLinks>
     ) : ModelNYTimes()
 
-    data class Buy(
+    data class BuyLinks(
         val name: String,
         val url: String
     ) : ModelNYTimes()

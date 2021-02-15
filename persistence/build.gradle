@@ -4,12 +4,6 @@ plugins {
     id 'kotlin-kapt'
 }
 
-def getApi() {
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    return properties.getProperty("BOOK_API")
-}
-
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -19,51 +13,40 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
-        debug {
-            minifyEnabled false
-            resValue("string", "build_time", "0")
-            buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/books/v3\"")
-            buildConfigField("String", "API_KEY", "\"getApi()\"")
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
 
         release {
-            minifyEnabled true
-            buildConfigField("String", "BASE_URL", "https://api.nytimes.com/svc/books/v3")
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
 
-
 dependencies {
-
     implementation(project(path: ':data'))
 
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
-
-    implementation "com.squareup.moshi:moshi-kotlin:1.11.0"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.11.0"
-
-    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    api "androidx.room:room-runtime:$room_version"
+    api "androidx.room:room-ktx:$room_version "
+    kapt "androidx.room:room-compiler:$room_version"
 }
