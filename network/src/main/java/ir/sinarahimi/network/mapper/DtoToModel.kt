@@ -16,7 +16,7 @@ fun Dto.Book.dtoToModel() = ModelNYTimes.Book(
     buyLinks = buyLinks.map { it.dtoToModel() }
 )
 
-fun Dto.Buy.dtoToModel() = ModelNYTimes.BuyLinks(
+fun Dto.Buy.dtoToModel() = ModelNYTimes.BuyLink(
     name = name,
     url = url
 )
