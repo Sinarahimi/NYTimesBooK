@@ -26,15 +26,12 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            resValue("string", "build_time", "0")
-            buildConfigField("String", "BASE_URL", "\"https://api.nytimes.com/svc/books/v3\"")
             buildConfigField("String", "API_KEY", "\"getApi()\"")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         release {
             minifyEnabled true
-            buildConfigField("String", "BASE_URL", "https://api.nytimes.com/svc/books/v3")
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
@@ -58,12 +55,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
-    implementation "com.squareup.moshi:moshi-kotlin:1.11.0"
+    api "com.squareup.moshi:moshi-kotlin:1.11.0"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.11.0"
 
-    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    api "com.squareup.okhttp3:okhttp:$okHttp_version"
+    api "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 }

@@ -25,5 +25,4 @@ class BookRepositoryImp(
     override fun get(): Flow<List<ModelNYTimes.Book>> {
         return bookLocalDataSource.fetch()
     }
-
 }
