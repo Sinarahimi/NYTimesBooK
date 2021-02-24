@@ -1,4 +1,4 @@
-package ir.sinarahimi.presentation
+package ir.sinarahimi.presentation.databinding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

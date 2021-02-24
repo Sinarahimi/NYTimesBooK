@@ -26,4 +26,5 @@
         app:defaultNavHost="true"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         app:navGraph="@navigation/main" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

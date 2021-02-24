@@ -11,11 +11,12 @@ import ir.sinarahimi.domain.usecase.RefreshBooksUseCase
 import ir.sinarahimi.presentation.Event
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * Created by Sina Rahimi on 2/17/2021.
  */
-class LibraryViewModel(
+class LibraryViewModel @Inject constructor(
     private val refreshBooksUseCase: RefreshBooksUseCase,
     private val getBooksUseCase: GetBooksUseCase
 ) : ViewModel() {

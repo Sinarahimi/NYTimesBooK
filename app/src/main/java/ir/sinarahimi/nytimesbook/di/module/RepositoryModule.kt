@@ -6,7 +6,6 @@ import ir.sinarahimi.data.datasource.book.BookLocalDataSource
 import ir.sinarahimi.data.datasource.book.BookRemoteDataSource
 import ir.sinarahimi.data.repository.book.BookRepositoryImp
 import ir.sinarahimi.domain.repository.book.BookRepository
-import javax.inject.Singleton
 
 /**
  * Created by Sina Rahimi on 2/20/2021.
@@ -14,7 +13,6 @@ import javax.inject.Singleton
 @Module
 class RepositoryModule {
 
-    @Singleton
     @Provides
     fun provideBookRepository(
         bookLocalDataSource: BookLocalDataSource,

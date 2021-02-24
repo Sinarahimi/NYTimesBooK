@@ -9,7 +9,7 @@ import retrofit2.http.Query
  */
 interface BookApi {
 
-    @GET("/reviews.json?author=Stephen+King")
+    @GET("reviews.json?author=Stephen+King")
     suspend fun getBooks(@Query("api-key") apiKey: String):
             Response<Dto.BaseNetworkResponse<List<Dto.Book>>>
 }

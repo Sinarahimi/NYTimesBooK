@@ -1,7 +1,8 @@
-package ir.sinarahimi.presentation
+package ir.sinarahimi.presentation.databinding
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import ir.sinarahimi.presentation.BR
 
 /**
  * Created by Sina Rahimi on 2/20/2021.
