@@ -1,5 +1,6 @@
 package ir.sinarahimi.uibook.library
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,8 +28,11 @@ class LibraryViewModel @Inject constructor(
     private var _successEvent: MutableLiveData<Event<String>> = MutableLiveData()
     val successEvent: LiveData<Event<String>> = _successEvent
 
-    private var _errorEvent: MutableLiveData<Event<Int>> = MutableLiveData()
-    val errorEvent: LiveData<Event<Int>> = _errorEvent
+    private var _failerEvent: MutableLiveData<Event<Int>> = MutableLiveData()
+    val failerEvent: LiveData<Event<Int>> = _failerEvent
+
+    private var _errorEvent: MutableLiveData<Event<String>> = MutableLiveData()
+    val errorEvent: LiveData<Event<String>> = _errorEvent
 
     init {
         refresh()
@@ -44,8 +48,11 @@ class LibraryViewModel @Inject constructor(
             val networkResponse = refreshBooksUseCase.execute(Unit)
             when (networkResponse) {
                 is NetworkResponse.Success -> _successEvent.value = Event("Books Updated")
-                is NetworkResponse.Failure -> _errorEvent.value = Event(networkResponse.code)
+                is NetworkResponse.Failure -> _failerEvent.value = Event(networkResponse.code)
                 is NetworkResponse.Error -> {
+                    val errorMsg = networkResponse.throwable.message.toString()
+                    _errorEvent.value = Event(errorMsg)
+                    Log.e("NetworkResponseError", errorMsg)
                     //You can send message here with LiveData to your UI
                 }
             }

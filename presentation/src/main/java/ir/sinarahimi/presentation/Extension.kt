@@ -1,7 +1,6 @@
 package ir.sinarahimi.presentation
 
 import android.view.View
-import android.widget.Toast.LENGTH_SHORT
 import com.google.android.material.snackbar.Snackbar
 
 /**
@@ -9,4 +8,4 @@ import com.google.android.material.snackbar.Snackbar
  */
 
 fun View.showSnackbar(message: String) =
-    Snackbar.make(this, message, LENGTH_SHORT).show()
+    Snackbar.make(this, message, Snackbar.LENGTH_LONG).show()

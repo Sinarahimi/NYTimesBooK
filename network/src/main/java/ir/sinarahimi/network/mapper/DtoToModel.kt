@@ -7,6 +7,7 @@ import ir.sinarahimi.network.api.Dto
  * Created by Sina Rahimi on 2/14/2021.
  */
 
+
 fun Dto.Book.dtoToModel() = ModelNYTimes.Book(
     publisher = publisher,
     description = description,

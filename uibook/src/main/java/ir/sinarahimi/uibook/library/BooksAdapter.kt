@@ -1,30 +1,52 @@
 package ir.sinarahimi.uibook.library
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import ir.sinarahimi.domain.ModelNYTimes
-import ir.sinarahimi.presentation.databinding.DataBindingAdapter
-import ir.sinarahimi.uibook.R
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import ir.sinarahimi.domain.ModelNYTimes.Book
+import ir.sinarahimi.uibook.databinding.ItemLibraryBinding
 
 /**
  * Created by Sina Rahimi on 2/18/2021.
  */
-class BooksAdapter : DataBindingAdapter<ModelNYTimes.Book>(DiffCallback()) {
+class BooksAdapter : ListAdapter<Book, BooksAdapter.ViewHolder>(DiffCallback()) {
 
-    class DiffCallback : DiffUtil.ItemCallback<ModelNYTimes.Book>() {
-        override fun areItemsTheSame(
-            oldItem: ModelNYTimes.Book,
-            newItem: ModelNYTimes.Book
-        ) = oldItem.title == newItem.title
+    class ViewHolder(
+        private val itemLibraryBinding: ItemLibraryBinding
+    ) : RecyclerView.ViewHolder(itemLibraryBinding.root) {
 
-
-        override fun areContentsTheSame(
-            oldItem: ModelNYTimes.Book,
-            newItem: ModelNYTimes.Book
-        ) = oldItem == newItem
-
+        fun bind(book: Book) {
+            itemLibraryBinding.book = book
+        }
     }
 
-    override fun getItemViewType(position: Int) = R.layout.item_library
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            ItemLibraryBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+}
+
+class DiffCallback : DiffUtil.ItemCallback<Book>() {
+    override fun areItemsTheSame(
+        oldItem: Book,
+        newItem: Book
+    ) = oldItem.title == newItem.title
+
+    override fun areContentsTheSame(
+        oldItem: Book,
+        newItem: Book
+    ) = oldItem == newItem
 }
 
 

@@ -20,9 +20,7 @@ class LibraryFragment : BaseFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private val booksAdapter: BooksAdapter by lazy {
-        BooksAdapter()
-    }
+    private val booksAdapter = BooksAdapter()
 
     private val viewModel: LibraryViewModel by lazy {
         ViewModelProvider(this, viewModelFactory).get(LibraryViewModel::class.java)
@@ -57,12 +55,14 @@ class LibraryFragment : BaseFragment() {
         viewModel.errorEvent.observe(viewLifecycleOwner, ::onError)
     }
 
-    private fun onError(event: Event<Int>?) {
-        binding!!.root.showSnackbar("Something Bad Happened!")
+    private fun onError(event: Event<String>) {
+        event.getContentIfNotHandled()?.let {
+            binding!!.root.showSnackbar(it)
+        }
     }
 
-    private fun onGetBooks(event: Event<List<ModelNYTimes.Book>>?) {
-        event?.getContentIfNotHandled().let {
+    private fun onGetBooks(event: Event<List<ModelNYTimes.Book>>) {
+        event.getContentIfNotHandled().let {
             binding!!.swipeRefreshLayout.isRefreshing = false
             booksAdapter.submitList(it)
         }

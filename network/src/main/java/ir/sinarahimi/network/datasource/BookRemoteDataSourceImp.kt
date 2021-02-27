@@ -20,8 +20,7 @@ class BookRemoteDataSourceImp(private val bookApi: BookApi) : BookRemoteDataSour
     override suspend fun get(): NetworkResponse<List<ModelNYTimes.Book>> = execute {
         bookApi.getBooks(apiKey)
     }.map {
-        it.results.map { book ->
-
+        it.results.books.map { book ->
             book.dtoToModel()
         }
     }

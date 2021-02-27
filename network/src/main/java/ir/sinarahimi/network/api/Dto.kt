@@ -16,6 +16,12 @@ sealed class Dto {
     ) : Dto()
 
     @JsonClass(generateAdapter = true)
+    data class BooksResult(
+        @Json(name = "books") val books: List<Book>
+
+    ) : Dto()
+
+    @JsonClass(generateAdapter = true)
     data class Book(
         @Json(name = "publisher") val publisher: String,
         @Json(name = "description") val description: String,
