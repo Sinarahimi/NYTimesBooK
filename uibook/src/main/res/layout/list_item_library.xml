@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="book"
             type="ir.sinarahimi.domain.ModelNYTimes.Book" />
@@ -13,7 +12,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/margin_Medium">
+        android:layout_margin="@dimen/margin_medium"
+        app:cardCornerRadius="@dimen/margin_medium">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="200dp"
@@ -21,22 +21,27 @@
 
             <ImageView
                 android:id="@+id/bookCoverImageView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="300dp"
+                android:background="@color/purple_500"
+                app:layout_constraintBottom_toTopOf="@+id/bookTitleTextView"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:background="@color/purple_500"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/bookTitleTextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/margin_Medium"
+                android:layout_height="0dp"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium"
                 android:text="@{book.title}"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintBottom_toTopOf="@+id/authorTextView"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/bookCoverImageView"
                 app:layout_constraintTop_toBottomOf="@+id/bookCoverImageView"
                 tools:ignore="RtlSymmetry"
@@ -45,15 +50,15 @@
             <TextView
                 android:id="@+id/authorTextView"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/margin_Medium"
-                android:paddingStart="@dimen/margin_Medium"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
                 android:text="@{book.author}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/bookTitleTextView"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/bookTitleTextView"
-                app:layout_constraintTop_toBottomOf="@+id/bookTitleTextView"
                 tools:ignore="RtlSymmetry"
                 tools:text="Rachel Hawkins" />
 

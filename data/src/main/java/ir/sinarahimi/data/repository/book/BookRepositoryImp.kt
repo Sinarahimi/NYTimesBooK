@@ -19,7 +19,6 @@ class BookRepositoryImp(
     override suspend fun refresh(): NetworkResponse<List<ModelNYTimes.Book>> {
         return bookRemoteDataSource.get().onSuccess {
             bookLocalDataSource.persist(it)
-            println("List")
         }
     }
 

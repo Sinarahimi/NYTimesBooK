@@ -53,7 +53,6 @@ class LibraryViewModel @Inject constructor(
                     val errorMsg = networkResponse.throwable.message.toString()
                     _errorEvent.value = Event(errorMsg)
                     Log.e("NetworkResponseError", errorMsg)
-                    //You can send message here with LiveData to your UI
                 }
             }
         }

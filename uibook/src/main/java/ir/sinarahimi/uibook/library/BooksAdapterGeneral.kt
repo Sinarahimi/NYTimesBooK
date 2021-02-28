@@ -24,7 +24,7 @@ class BooksAdapterGeneral : DataBindingAdapter<ModelNYTimes.Book>(DiffCallback()
 
     }
 
-    override fun getItemViewType(position: Int) = R.layout.item_library
+    override fun getItemViewType(position: Int) = R.layout.list_item_library
 }
 
 

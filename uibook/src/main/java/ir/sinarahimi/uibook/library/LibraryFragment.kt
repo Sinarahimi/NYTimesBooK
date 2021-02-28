@@ -44,7 +44,7 @@ class LibraryFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         binding!!.libraryRecyclerView.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = adapter
+            adapter = booksAdapter
         }
 
         binding!!.swipeRefreshLayout.apply {
