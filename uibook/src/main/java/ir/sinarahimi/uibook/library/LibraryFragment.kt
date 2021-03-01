@@ -53,10 +53,19 @@ class LibraryFragment : BaseFragment() {
         }
         viewModel.refreshEvent.observe(viewLifecycleOwner, ::onGetBooks)
         viewModel.errorEvent.observe(viewLifecycleOwner, ::onError)
+        viewModel.failureEvent.observe(viewLifecycleOwner, ::onFailure)
+    }
+
+    private fun onFailure(event: Event<Int>) {
+        event.getContentIfNotHandled()?.let {
+            binding!!.swipeRefreshLayout.isRefreshing = false
+            binding!!.root.showSnackbar(it.toString())
+        }
     }
 
     private fun onError(event: Event<String>) {
         event.getContentIfNotHandled()?.let {
+            binding!!.swipeRefreshLayout.isRefreshing = false
             binding!!.root.showSnackbar(it)
         }
     }

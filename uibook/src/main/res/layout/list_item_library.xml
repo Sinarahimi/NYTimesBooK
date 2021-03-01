@@ -23,6 +23,7 @@
                 android:id="@+id/bookCoverImageView"
                 android:layout_width="0dp"
                 android:layout_height="300dp"
+                loadImageGlide="@{book.bookImage}"
                 android:background="@color/purple_500"
                 app:layout_constraintBottom_toTopOf="@+id/bookTitleTextView"
                 app:layout_constraintEnd_toEndOf="parent"
