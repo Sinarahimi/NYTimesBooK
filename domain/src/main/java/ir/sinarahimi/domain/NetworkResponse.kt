@@ -12,7 +12,6 @@ sealed class NetworkResponse<out T> {
     data class Error(val throwable: Throwable) : NetworkResponse<Nothing>()
 }
 
-//TODO ask this
 inline fun <T> NetworkResponse<T>.onSuccess(block: (T) -> Unit): NetworkResponse<T> {
     if (this is NetworkResponse.Success) {
         block(this.data)

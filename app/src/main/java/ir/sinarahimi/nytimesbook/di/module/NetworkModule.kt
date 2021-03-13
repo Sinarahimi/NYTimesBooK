@@ -2,6 +2,8 @@ package ir.sinarahimi.nytimesbook.di.module
 
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import ir.sinarahimi.network.api.BookApi
 import ir.sinarahimi.nytimesbook.BuildConfig
 import okhttp3.OkHttpClient
@@ -15,6 +17,7 @@ import javax.inject.Singleton
  * Created by Sina Rahimi on 2/20/2021.
  */
 @Module
+@InstallIn(SingletonComponent::class)
 class NetworkModule {
 
     private val baseUrl = BuildConfig.BASE_URL

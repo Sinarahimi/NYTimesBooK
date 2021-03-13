@@ -4,27 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import ir.sinarahimi.domain.ModelNYTimes
 import ir.sinarahimi.presentation.Event
-import ir.sinarahimi.presentation.base.BaseFragment
 import ir.sinarahimi.presentation.showSnackbar
 import ir.sinarahimi.uibook.databinding.FragmentLibraryBinding
-import javax.inject.Inject
 
-class LibraryFragment : BaseFragment() {
+@AndroidEntryPoint
+class LibraryFragment : Fragment() {
 
     private var binding: FragmentLibraryBinding? = null
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
     private val booksAdapter = BooksAdapter()
 
-    private val viewModel: LibraryViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory).get(LibraryViewModel::class.java)
-    }
+    private val viewModel: LibraryViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

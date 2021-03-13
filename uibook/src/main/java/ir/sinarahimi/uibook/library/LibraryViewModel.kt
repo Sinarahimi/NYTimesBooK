@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.sinarahimi.domain.ModelNYTimes
 import ir.sinarahimi.domain.NetworkResponse
 import ir.sinarahimi.domain.usecase.GetBooksUseCase
@@ -17,6 +18,7 @@ import javax.inject.Inject
 /**
  * Created by Sina Rahimi on 2/17/2021.
  */
+@HiltViewModel
 class LibraryViewModel @Inject constructor(
     private val refreshBooksUseCase: RefreshBooksUseCase,
     private val getBooksUseCase: GetBooksUseCase
@@ -47,6 +49,7 @@ class LibraryViewModel @Inject constructor(
         viewModelScope.launch {
             val networkResponse = refreshBooksUseCase.execute(Unit)
             when (networkResponse) {
+
                 is NetworkResponse.Success -> _successEvent.value = Event("Books Updated")
                 is NetworkResponse.Failure -> _failureEvent.value = Event(networkResponse.code)
                 is NetworkResponse.Error -> {
