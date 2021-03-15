@@ -10,5 +10,6 @@ Once you have the key, add this line to the `local.properties` file:
 ```
 BOOK_API =<your New York Times API key>
 ```
+The app is unusable without an API key.
 
 
