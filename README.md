@@ -8,8 +8,11 @@ NYTimesBooK uses New York Times API to load books on the library screen. To use 
 Once you have the key, add this line to the `local.properties` file:
 
 ```
-BOOK_API =<your New York Times API key>
+BOOK_API = your New York Times API key
 ```
 The app is unusable without an API key.
+
+Screenshots
+-----------
 
 
