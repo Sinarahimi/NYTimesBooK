@@ -3,8 +3,8 @@ NYTimesBooK is an Android sample app which shows list of NewYorkTimes books.
 
 Branches 
 ---------------
--
--
+-hilt
+-dagger
 
 Getting Started
 ---------------
@@ -22,5 +22,11 @@ Screenshots
 
 Built With
 -----------
+* [Lifecycles][12] - Create a UI that automatically responds to lifecycle events.
+  * [LiveData][13] - Build data objects that notify views when the underlying database changes.
+  * [Navigation][14] - Handle everything needed for in-app navigation.
+  * [Room][16] - Access your app's SQLite database with in-app objects and compile-time checks.
+  * [ViewModel][17] - Store UI-related data that isn't destroyed on app rotations. Easily schedule
+     asynchronous tasks for optimal execution.
 
 
