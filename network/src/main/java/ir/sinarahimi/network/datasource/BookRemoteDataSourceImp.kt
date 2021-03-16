@@ -16,7 +16,6 @@ class BookRemoteDataSourceImp(private val bookApi: BookApi) : BookRemoteDataSour
 
     private val apiKey = BuildConfig.API_KEY
 
-    //TODO Ask this
     override suspend fun get(): NetworkResponse<List<ModelNYTimes.Book>> = execute {
         bookApi.getBooks(apiKey)
     }.map {

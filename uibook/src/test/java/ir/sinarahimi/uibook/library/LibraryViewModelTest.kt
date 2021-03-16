@@ -59,8 +59,6 @@ class LibraryViewModelTest {
         val books = listOf<ModelNYTimes.Book>()
         val networkResponse = NetworkResponse.Success(books)
 
-
-
         coEvery { refreshBooksUseCase.execute(Unit) } returns networkResponse
         coEvery { getBooksUseCase.execute(Unit) } returns flows()
 
