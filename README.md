@@ -19,7 +19,7 @@ The app is unusable without an API key.
 
 Screenshots
 -----------
-![List of books](screenshots/Screenshot_20210317_212040.png "A list of books")
+![List of books](screenshots/Screenshot_20210317_212040.jpg "A list of books")
 
 Built With
 -----------
