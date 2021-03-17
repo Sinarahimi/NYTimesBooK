@@ -3,8 +3,8 @@ NYTimesBooK is an Android sample app which shows list of NewYorkTimes books.
 
 Branches 
 ---------------
--hilt
--dagger
+- hilt
+- dagger
 
 Getting Started
 ---------------
@@ -19,16 +19,17 @@ The app is unusable without an API key.
 
 Screenshots
 -----------
+![List of books](screenshots/Screenshot_20210317_212040.png "A list of books")
 
 Built With
 -----------
-* [Lifecycles][1]
-  * [LiveData][2] 
-  * [Navigation][3] 
-  * [Room][4]
-  * [ViewModel][5]
-  * [Hilt][6]
-  * [Kotlin Coroutines][7]
+ * [Lifecycles][1]
+ * [LiveData][2] 
+ * [Navigation][3] 
+ * [Room][4]
+ * [ViewModel][5]
+ * [Hilt][6]
+ * [Kotlin Coroutines][7]
 
 
 [1]: https://developer.android.com/topic/libraries/architecture/lifecycle
