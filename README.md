@@ -22,11 +22,21 @@ Screenshots
 
 Built With
 -----------
-* [Lifecycles][12] - Create a UI that automatically responds to lifecycle events.
-  * [LiveData][13] - Build data objects that notify views when the underlying database changes.
-  * [Navigation][14] - Handle everything needed for in-app navigation.
-  * [Room][16] - Access your app's SQLite database with in-app objects and compile-time checks.
-  * [ViewModel][17] - Store UI-related data that isn't destroyed on app rotations. Easily schedule
-     asynchronous tasks for optimal execution.
+* [Lifecycles][1]
+  * [LiveData][2] 
+  * [Navigation][3] 
+  * [Room][4]
+  * [ViewModel][5]
+  * [Hilt][6]
+  * [Kotlin Coroutines][7]
+
+
+[1]: https://developer.android.com/topic/libraries/architecture/lifecycle
+[2]: https://developer.android.com/topic/libraries/architecture/livedata
+[3]: https://developer.android.com/topic/libraries/architecture/navigation/
+[4]: https://developer.android.com/topic/libraries/architecture/room
+[5]: https://developer.android.com/topic/libraries/architecture/viewmodel
+[6]: https://developer.android.com/training/dependency-injection/hilt-android
+[7]: https://kotlinlang.org/docs/reference/coroutines-overview.html
 
 
