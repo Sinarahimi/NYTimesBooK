@@ -27,12 +27,14 @@ class NetworkModule {
     fun provideMoshiConverterFactory(): MoshiConverterFactory =
         MoshiConverterFactory.create()
 
+    @Singleton
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 
+    @Singleton
     @Provides
     fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
         OkHttpClient().newBuilder()
@@ -42,6 +44,7 @@ class NetworkModule {
             .addInterceptor(httpLoggingInterceptor)
             .build()
 
+    @Singleton
     @Provides
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
@@ -53,6 +56,7 @@ class NetworkModule {
             .addConverterFactory(moshiConverterFactory)
             .build()
 
+    @Singleton
     @Provides
     fun provideBookApi(retrofit: Retrofit): BookApi =
         retrofit.create(BookApi::class.java)

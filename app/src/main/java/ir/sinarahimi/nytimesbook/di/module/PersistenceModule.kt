@@ -18,6 +18,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class PersistenceModule {
 
+    //@Singleton providers are only called once per SingletonComponent instance.
     @Singleton
     @Provides
     fun provideBookDataBase(@ApplicationContext context: Context): BookDataBase =
